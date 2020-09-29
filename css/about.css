@@ -1,0 +1,436 @@
+*{
+    box-sizing:border-box;
+}
+body{
+  background-color: white;
+}
+
+
+/* Style the navigation bar */
+.navbar {
+ width: 100%;
+ overflow: auto;
+ text-align: right;
+ 
+}
+
+/* Navbar links */
+.navbar a {
+ float: left;
+ text-align: center;
+ padding: 12px;
+ color: white;
+ text-decoration: none;
+ font-size: 17px;
+ margin:7px;
+ 
+
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+background-color:green;
+}
+
+/* Current/active navbar link */
+.active {
+ color: #4CAF50;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+ .navbar a {
+   float: none;
+   display: block;
+ }
+}
+/* style urbannaija logo */
+.logo{
+   width:10%;
+   margin-left:35%;
+ }
+
+ /* Style About Section */
+
+ /*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  text-align: center;
+  left:1%;
+  
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #e03a3c;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+.section-bg {
+  padding: 120px 0;
+  color: #fff;
+}
+
+.section-bg:before {
+  content: "";
+  background: rgb(13, 13, 22);
+  position: absolute;
+  bottom: 60px;
+  top: 60px;
+  left: 0;
+  right: 0;
+  transform: skewY(-3deg);
+}
+
+
+
+.about .container {
+  position: relative;
+  z-index: 10;
+  
+}
+
+.about .content {
+  padding: 30px 30px 30px 0;
+}
+/* 
+.about .content h3 {
+  font-weight: 800;
+  font-size: 34px;
+  margin-bottom: 30px;
+} */
+
+.about .content h1 {
+  margin-bottom: 50px;
+  font-size: 22px;
+}
+
+.about .content .about-btn {
+  padding: 8px 30px 9px 30px;
+  color: #fff;
+  border-radius: 50px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid #e03a3c;
+}
+
+.about .content .about-btn i {
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+.about .content .about-btn:hover {
+  background: #e35052;
+  background: #e03a3c;
+}
+
+.about .icon-boxes .icon-box {
+  margin-top: 30px;
+}
+
+.about .icon-boxes .icon-box i {
+  font-size: 40px;
+  color: #e03a3c;
+  margin-bottom: 10px;
+}
+
+.about .icon-boxes .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.about .icon-boxes .icon-box p {
+  font-size: 15px;
+  color: #848484;
+}
+
+@media (max-width: 1200px) {
+  .about .content {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    text-align: center;
+  }
+}
+
+ h4{
+  animation-name: flyIn;
+  animation-duration: 1s;
+}
+
+
+
+h1{
+  animation-name: flyIn;
+  animation-duration: 1s;
+}
+@keyframes flyIn{
+  from{margin-top:100px;}
+  to{margin-top:10px;}
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+}
+@keyframes bounceIn{
+  from{margin-top:10%;}
+  to{margin-top:1%;}
+}
+.portfolio .portfolio-item{
+  animation-name: bounceIn;
+  animation-duration: 3s;
+}
+
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+  
+}
+
+
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 15px 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #444444;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 3px;
+  animation-name: bounceIn;
+  animation-duration: 3s;
+}
+
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+  color: #fff;
+  background: #e03a3c;
+}
+
+.portfolio #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+
+.portfolio .portfolio-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(17, 17, 17, 0.6);
+}
+
+.portfolio .portfolio-wrap::before {
+  content: "";
+  background: rgba(17, 17, 17, 0.6);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.portfolio .portfolio-wrap img {
+  transition: all ease-in-out 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.portfolio .portfolio-wrap .portfolio-info p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+}
+
+.portfolio .portfolio-wrap .portfolio-links {
+  text-align: center;
+  z-index: 4;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 5px 0 0;
+  font-size: 28px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  color: #fff;
+}
+
+.portfolio .portfolio-wrap:hover::before {
+  opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.2);
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  opacity: 1;
+} 
+/* End portfolio section */
+
+
+.card-text{
+  color:black;
+  margin-top:15%;
+  margin-left:25%;
+  font-size:20px;
+
+}
+
+/* To style the lines in the card-text */
+.line{
+  border:1px solid;
+  color:lightgrey;
+}
+.line2{
+  border:1px solid;
+  color:lightgrey;
+}
+.line3{
+  border:1px solid;
+  color:lightgrey;
+}
+
+
+
+.box2{
+  float:right;
+  width:29%;
+  height:370%;
+  top:27%;
+  position:absolute;
+  right:0%;
+
+}
+
+.border{
+  background-color: chocolate;
+  border-radius:70%;
+  width:33%;
+  height:10%;
+  color:black;
+  position:absolute;
+  top:305%;
+  left:30%;
+  transition:width 2s;
+}
+
+.border:hover{
+  width:37%;
+}
+
+.border:hover{
+  animation-name:change;
+  animation-duration: 3s;
+}
+
+@keyframes change{
+  5% {background-color: orange;}
+  10%{background-color: chocolate;}
+  20%{background-color: brown;}  
+}
+h8{
+  position:absolute;
+  top:25%;
+  left:17%;
+  text-align:center;
+  font-size:25px;
+  color:black;
+}
+
+
+  /* Footer */
+.footer{
+    border:1px;
+    position:absolute;
+    top:470%;
+    left:0%;
+    color:white;
+    width:100%;
+    height:10%;
+}
+h2{
+    text-align:center;
+    font-size:20px;
+    position:absolute;
+    top:19%;
+    left:30%;
+    color:white;
+ }
+
